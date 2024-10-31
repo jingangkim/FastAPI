@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from tortoise import fields
 from tortoise.models import Model
 
@@ -20,7 +22,7 @@ class Comment(BaseModel, Model):
         table = "comments"
 
     @classmethod
-    async def get_al_by_article(cls, article: str) -> list[Comment]:
+    async def get_all_by_article(cls, article: str) -> list[Comment]:
         return await cls.filter(article=article).all()
 
     # filter().all()을 보면 알 수 있지만
