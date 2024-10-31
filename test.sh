@@ -18,3 +18,5 @@ poetry run coverage report -m # 테스트 완료 후 coverage가 어떻게 되�
 poetry run coverage html
 
 echo "${COLOR_GREEN}All tests passed successfully!${COLOR_NC}"
+
+
