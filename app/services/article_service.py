@@ -20,13 +20,12 @@ async def service_get_article_and_comments(
     # 각각 하나의 일을 시킨 것 = IO요청을 받아들인 주체(데이터베이스, 외부서버)
     # gather는 concurrent하게 비동기 호출하는 것.
     #
-
-    article, comments = await asyncio.gather(
-        Article.get_one_by_id(article_id), Comment.get_all_by_article(article_id)
-    )
+    # article, comments = await asyncio.gather(
+    #     Article.get_one_by_id(article_id), Comment.get_all_by_article(article_id)
+    # )
     # 직렬
-    # article = await Article.get_one_by_id(article_id)
-    # comments = await Comment.get_all_by_article(article_id)
+    article = await Article.get_one_by_id(article_id)
+    comments = await Comment.get_all_by_article(article_id)
 
     return ArticleAndCommentsResponse(
         id=article.id,
