@@ -1,17 +1,9 @@
 from fastapi import FastAPI
 
+from app.routers.article_router import router as article_router
+
 app = FastAPI()
-
-
-@app.get("/")
-async def root() -> dict[str, str]:
-    return {"message": "Hello World"}
-
-
-@app.get("/hello/{name}")
-async def say_hello(name: str) -> dict[str, str]:
-    return {"message": f"Hello {name}"}
-
+app.include_router(article_router)
 
 if __name__ == "__main__":
     import uvicorn
