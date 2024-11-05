@@ -26,6 +26,7 @@ class TestArticleRouter(TestCase):
         # when절
         # 기존에 동기 방식으로 http요청을 할 때는 requests를 썼다
         # 비동기 방식으로 httpx 요청을 하고 싶다면 httpx를 쓴다
+        # router테스트는 url을 거쳐서 실제로 api를 호출하는 테스트다.
 
         # httpx.AsycCliant(app=app) async client에 app을 전달하면
         # asgi app에 바로 요청할 수 있는 clientrk todtjdehla
